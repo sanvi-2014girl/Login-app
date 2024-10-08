@@ -1,0 +1,28 @@
+from tkinter import *
+root = Tk()
+root.title('Login app')
+root.geometry('400x400')
+frame = Frame(master=root, height=200, width=360, bg="#d0efff")
+lbl1 = Label(frame,text="full name", bg="#3895D3", fg='white', width=12)
+lbl1.pack()
+lbl2 = Label(frame, text="Email Id",bg="#3895D3", fg='white', width = 12)
+lbl2.pack()
+lbl3 = Label(frame, text="Enter Password", bg="#3895D3", fg='white', width =12)
+lbl3.pack()
+name_entry = Entry(frame)
+name_entry.pack()
+email_entry = Entry(frame)
+email_entry.pack()
+pass_entry = Entry(frame, show="*")
+pass_entry.pack()
+def display():
+    name = name_entry.get()
+    greet = "Hey" + name
+    message = "\nCongratulations for your new account!"
+    textbox.insert(END,greet)
+    textbox.insert(END,message)
+textbox = Text(bg="#BEBEBE", fg="black")
+textbox.pack()
+btn = Button(text="Create account", command=display,bg="red")
+btn.pack()
+root.mainloop()
